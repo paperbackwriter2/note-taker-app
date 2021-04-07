@@ -15,23 +15,16 @@
 
 
 <script>
-//let populateNotes = getExistingNotes()
-//let key = localStorage.key(i);
-//let value = localStorage.value(key);
 getExistingNotes()
 function getExistingNotes(){
     for (i=0;i<localStorage.length;i++) {
         const key = localStorage.key(i)
         const value = localStorage.getItem(key);
-        // right here, I need to figure out how to output the values
-        // on the page
-        console.log(value) 
+        //console.log(value) 
         newNote = document.createElement('li');
         newNote.innerHTML = value;
         document.getElementById("notes-list").appendChild(newNote);
-        //document.getElementById("list-item").innerHTML = "Changing things!"
     }
 }
-//document.getElementById('list-item').innerHTML = "Changing things 'round here!"
 </script>
 </body>

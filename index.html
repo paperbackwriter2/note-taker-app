@@ -19,10 +19,8 @@
 
 <script>
 var textElement = document.getElementById("note")
-//index = length.localStorage;
-// ATTENTION-- if I come back to this page, index is reset to zero
-//index = 0;
 index = (localStorage.length)
+
 if(localStorage.length===null) {
     index = 0;
 }
@@ -32,9 +30,6 @@ function saveNote() {
     if (textElement.value) {
         localStorage.setItem(index, textElement.value)
         console.log(localStorage);
-        //index++;
-        //location.reload();
-    
     }
     else {
         alert("You cannot save a blank note.")
