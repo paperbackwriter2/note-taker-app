@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <title>Note Taker App</title>
+</head>
+<body>
+    <div class="front-page">
+        <h2 class="header">Note Taker App</h2>
+            <textarea id="note" name="note-text" class="note-area"></textarea>
+            <br>
+            <button id="submit" onclick="saveNote()" class="submit">Save Note</button>
+        <div class="notes-link">
+            <a href="index2.html" >View Notes</a>
+        </div> 
+    </div>
+</body>
+
+<script>
+var textElement = document.getElementById("note")
+//index = length.localStorage;
+// ATTENTION-- if I come back to this page, index is reset to zero
+//index = 0;
+index = (localStorage.length)
+if(localStorage.length===null) {
+    index = 0;
+}
+function saveNote() {
+    index = (localStorage.length)
+    console.log(`index is ${index}`)
+    if (textElement.value) {
+        localStorage.setItem(index, textElement.value)
+        console.log(localStorage);
+        //index++;
+        //location.reload();
+    
+    }
+    else {
+        alert("You cannot save a blank note.")
+    }
+}
+</script>
